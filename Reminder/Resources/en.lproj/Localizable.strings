@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by Edgar Jonas Mesquita da Silva on 28/12/24.
+  
+*/
+/* MARK: - LOGIN Screen */
+"login.label.title" = "Entre para acessar suas receitas";
+"login.email.placeholder" = "email@exemplo.com";
+"login.button.title" = "Entrar";
+"login.password.label" = "Senha";
+"login.email.label" = "Email";
+
+/* MARK: - HOME Screen */
+
+/* MARK: - RECEIPTS Screen */
+
+/* MARK: - NEW RECEIPTS Screen */

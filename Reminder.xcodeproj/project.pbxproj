@@ -7,23 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034842A265136D69FDACE524 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DFBB02C5E8EE7A1D9630F4 /* Pods_Reminder.framework */; };
+		6D031F2E2D22E61B001EE167 /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F2D2D22E61B001EE167 /* ReminderFlowController.swift */; };
+		6D031F302D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F2F2D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift */; };
+		6D031F322D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F312D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift */; };
+		6D031F342D230D6D001EE167 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F332D230D6D001EE167 /* SplashFlowDelegate.swift */; };
+		6D031F392D231AED001EE167 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F382D231AED001EE167 /* ViewControllersFactoryProtocol.swift */; };
+		6D031F3B2D231B38001EE167 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F3A2D231B38001EE167 /* ViewControllersFactory.swift */; };
+		6D8F08F62D1E06E4007DD3AE /* Typograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F08F52D1E06E4007DD3AE /* Typograph.swift */; };
+		6D8F08F82D1E08FA007DD3AE /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F08F72D1E08FA007DD3AE /* Metrics.swift */; };
+		6DB56A802D21BA2E00AEFC73 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB56A7D2D21BA2E00AEFC73 /* NunitoSans-Regular.ttf */; };
+		6DB56A812D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB56A7E2D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf */; };
+		6DB56A822D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB56A7F2D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf */; };
+		6DB56A842D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */; };
+		6DB56A872D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */; };
+		6DB56A892D21CF9600AEFC73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DB56A882D21CF9600AEFC73 /* GoogleService-Info.plist */; };
 		6DE6EA2B2D1A0F91009CF554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA2A2D1A0F91009CF554 /* AppDelegate.swift */; };
 		6DE6EA2D2D1A0F91009CF554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA2C2D1A0F91009CF554 /* SceneDelegate.swift */; };
-		6DE6EA2F2D1A0F91009CF554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA2E2D1A0F91009CF554 /* ViewController.swift */; };
-		6DE6EA322D1A0F91009CF554 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EA312D1A0F91009CF554 /* Base */; };
 		6DE6EA342D1A0F94009CF554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EA332D1A0F94009CF554 /* Assets.xcassets */; };
-		6DE6EA372D1A0F94009CF554 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6DE6EA362D1A0F94009CF554 /* Base */; };
+		6DE6EA422D1AE44A009CF554 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA412D1AE44A009CF554 /* SplashViewController.swift */; };
+		6DE6EA442D1AE4F2009CF554 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA432D1AE4F2009CF554 /* SplashView.swift */; };
+		6DE6EA482D1AF0B1009CF554 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA472D1AF0B1009CF554 /* Colors.swift */; };
+		6DE6EA4A2D1AF2C8009CF554 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA492D1AF2C8009CF554 /* UIColor+Ext.swift */; };
+		6DFBA89D2D20720600511006 /* LoginBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBA89C2D20720600511006 /* LoginBottomSheetViewController.swift */; };
+		6DFBA89F2D20724200511006 /* LoginBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBA89E2D20724200511006 /* LoginBottomSheetView.swift */; };
+		6DFBA8A52D20811100511006 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DFBA8A32D20811100511006 /* Localizable.strings */; };
+		6DFBA8A82D2081D600511006 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBA8A72D2081D600511006 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13DFBB02C5E8EE7A1D9630F4 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D031F2D2D22E61B001EE167 /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
+		6D031F2F2D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModelDelegate.swift; sourceTree = "<group>"; };
+		6D031F312D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
+		6D031F332D230D6D001EE167 /* SplashFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFlowDelegate.swift; sourceTree = "<group>"; };
+		6D031F382D231AED001EE167 /* ViewControllersFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactoryProtocol.swift; sourceTree = "<group>"; };
+		6D031F3A2D231B38001EE167 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		6D8F08F52D1E06E4007DD3AE /* Typograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typograph.swift; sourceTree = "<group>"; };
+		6D8F08F72D1E08FA007DD3AE /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		6DB56A7D2D21BA2E00AEFC73 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		6DB56A7E2D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6DB56A7F2D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewDelegate.swift; sourceTree = "<group>"; };
+		6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
+		6DB56A882D21CF9600AEFC73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6DE6EA272D1A0F91009CF554 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE6EA2A2D1A0F91009CF554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DE6EA2C2D1A0F91009CF554 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DE6EA2E2D1A0F91009CF554 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6DE6EA312D1A0F91009CF554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DE6EA332D1A0F94009CF554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6DE6EA362D1A0F94009CF554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DE6EA382D1A0F94009CF554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE6EA412D1AE44A009CF554 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		6DE6EA432D1AE4F2009CF554 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		6DE6EA472D1AF0B1009CF554 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6DE6EA492D1AF2C8009CF554 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		6DFBA89C2D20720600511006 /* LoginBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewController.swift; sourceTree = "<group>"; };
+		6DFBA89E2D20724200511006 /* LoginBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetView.swift; sourceTree = "<group>"; };
+		6DFBA8A42D20811100511006 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DFBA8A72D2081D600511006 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		D9DF7E845C65BB208A5E2B28 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		DEB048E41EDA27FB32A04DA8 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +73,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034842A265136D69FDACE524 /* Pods_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64A687F95B36612A9CCD2A55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13DFBB02C5E8EE7A1D9630F4 /* Pods_Reminder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D031F352D231AC2001EE167 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				6D031F372D231ADB001EE167 /* ViewControllersFactory */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		6D031F372D231ADB001EE167 /* ViewControllersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6D031F382D231AED001EE167 /* ViewControllersFactoryProtocol.swift */,
+				6D031F3A2D231B38001EE167 /* ViewControllersFactory.swift */,
+			);
+			path = ViewControllersFactory;
+			sourceTree = "<group>";
+		};
+		6DB56A762D21B98300AEFC73 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6DB56A7E2D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf */,
+				6DB56A7D2D21BA2E00AEFC73 /* NunitoSans-Regular.ttf */,
+				6DB56A7F2D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6DB56A852D21CA6A00AEFC73 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */,
+				6D031F2F2D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift */,
+				6D031F312D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6DE6EA1E2D1A0F91009CF554 = {
 			isa = PBXGroup;
 			children = (
 				6DE6EA292D1A0F91009CF554 /* Reminder */,
 				6DE6EA282D1A0F91009CF554 /* Products */,
+				B5FA276A698915DB959E049B /* Pods */,
+				64A687F95B36612A9CCD2A55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +146,94 @@
 		6DE6EA292D1A0F91009CF554 /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				6DB56A882D21CF9600AEFC73 /* GoogleService-Info.plist */,
+				6DFBA8A02D20803400511006 /* Resources */,
+				6DE6EA462D1AF0A8009CF554 /* Constants */,
+				6DE6EA3E2D1AE412009CF554 /* Sources */,
 				6DE6EA2A2D1A0F91009CF554 /* AppDelegate.swift */,
 				6DE6EA2C2D1A0F91009CF554 /* SceneDelegate.swift */,
-				6DE6EA2E2D1A0F91009CF554 /* ViewController.swift */,
-				6DE6EA302D1A0F91009CF554 /* Main.storyboard */,
-				6DE6EA332D1A0F94009CF554 /* Assets.xcassets */,
-				6DE6EA352D1A0F94009CF554 /* LaunchScreen.storyboard */,
+				6D031F2D2D22E61B001EE167 /* ReminderFlowController.swift */,
 				6DE6EA382D1A0F94009CF554 /* Info.plist */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		6DE6EA3E2D1AE412009CF554 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6D031F352D231AC2001EE167 /* DependencyInjection */,
+				6DFBA8A62D2081C200511006 /* Extensions */,
+				6DE6EA3F2D1AE41B009CF554 /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6DE6EA3F2D1AE41B009CF554 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6DFBA89B2D2071EC00511006 /* LoginBottomSheet */,
+				6DE6EA402D1AE43A009CF554 /* Splash */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6DE6EA402D1AE43A009CF554 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				6DE6EA432D1AE4F2009CF554 /* SplashView.swift */,
+				6DE6EA412D1AE44A009CF554 /* SplashViewController.swift */,
+				6D031F332D230D6D001EE167 /* SplashFlowDelegate.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		6DE6EA462D1AF0A8009CF554 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6DE6EA472D1AF0B1009CF554 /* Colors.swift */,
+				6DE6EA492D1AF2C8009CF554 /* UIColor+Ext.swift */,
+				6D8F08F52D1E06E4007DD3AE /* Typograph.swift */,
+				6D8F08F72D1E08FA007DD3AE /* Metrics.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6DFBA89B2D2071EC00511006 /* LoginBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				6DB56A852D21CA6A00AEFC73 /* ViewModel */,
+				6DFBA89E2D20724200511006 /* LoginBottomSheetView.swift */,
+				6DFBA89C2D20720600511006 /* LoginBottomSheetViewController.swift */,
+				6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */,
+			);
+			path = LoginBottomSheet;
+			sourceTree = "<group>";
+		};
+		6DFBA8A02D20803400511006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DB56A762D21B98300AEFC73 /* Fonts */,
+				6DE6EA332D1A0F94009CF554 /* Assets.xcassets */,
+				6DFBA8A32D20811100511006 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6DFBA8A62D2081C200511006 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6DFBA8A72D2081D600511006 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B5FA276A698915DB959E049B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEB048E41EDA27FB32A04DA8 /* Pods-Reminder.debug.xcconfig */,
+				D9DF7E845C65BB208A5E2B28 /* Pods-Reminder.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DE6EA3B2D1A0F94009CF554 /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
+				1F0D6E831FE6E22AA31CD279 /* [CP] Check Pods Manifest.lock */,
 				6DE6EA232D1A0F91009CF554 /* Sources */,
 				6DE6EA242D1A0F91009CF554 /* Frameworks */,
 				6DE6EA252D1A0F91009CF554 /* Resources */,
+				FB2741F3E9CA484FF9487545 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,42 +296,95 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB56A822D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf in Resources */,
+				6DFBA8A52D20811100511006 /* Localizable.strings in Resources */,
+				6DB56A892D21CF9600AEFC73 /* GoogleService-Info.plist in Resources */,
+				6DB56A812D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf in Resources */,
 				6DE6EA342D1A0F94009CF554 /* Assets.xcassets in Resources */,
-				6DE6EA372D1A0F94009CF554 /* Base in Resources */,
-				6DE6EA322D1A0F91009CF554 /* Base in Resources */,
+				6DB56A802D21BA2E00AEFC73 /* NunitoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F0D6E831FE6E22AA31CD279 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reminder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB2741F3E9CA484FF9487545 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6DE6EA232D1A0F91009CF554 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE6EA2F2D1A0F91009CF554 /* ViewController.swift in Sources */,
+				6DB56A872D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift in Sources */,
+				6DE6EA422D1AE44A009CF554 /* SplashViewController.swift in Sources */,
+				6DE6EA482D1AF0B1009CF554 /* Colors.swift in Sources */,
+				6D031F3B2D231B38001EE167 /* ViewControllersFactory.swift in Sources */,
+				6D031F392D231AED001EE167 /* ViewControllersFactoryProtocol.swift in Sources */,
+				6D031F322D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift in Sources */,
+				6DE6EA442D1AE4F2009CF554 /* SplashView.swift in Sources */,
+				6D8F08F62D1E06E4007DD3AE /* Typograph.swift in Sources */,
+				6DFBA89D2D20720600511006 /* LoginBottomSheetViewController.swift in Sources */,
+				6D031F342D230D6D001EE167 /* SplashFlowDelegate.swift in Sources */,
+				6DFBA89F2D20724200511006 /* LoginBottomSheetView.swift in Sources */,
+				6DE6EA4A2D1AF2C8009CF554 /* UIColor+Ext.swift in Sources */,
 				6DE6EA2B2D1A0F91009CF554 /* AppDelegate.swift in Sources */,
+				6D031F302D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift in Sources */,
+				6D031F2E2D22E61B001EE167 /* ReminderFlowController.swift in Sources */,
 				6DE6EA2D2D1A0F91009CF554 /* SceneDelegate.swift in Sources */,
+				6D8F08F82D1E08FA007DD3AE /* Metrics.swift in Sources */,
+				6DB56A842D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift in Sources */,
+				6DFBA8A82D2081D600511006 /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6DE6EA302D1A0F91009CF554 /* Main.storyboard */ = {
+		6DFBA8A32D20811100511006 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6DE6EA312D1A0F91009CF554 /* Base */,
+				6DFBA8A42D20811100511006 /* en */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6DE6EA352D1A0F94009CF554 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DE6EA362D1A0F94009CF554 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,17 +511,20 @@
 		};
 		6DE6EA3C2D1A0F94009CF554 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB048E41EDA27FB32A04DA8 /* Pods-Reminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NJ629K85TU;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,17 +542,20 @@
 		};
 		6DE6EA3D2D1A0F94009CF554 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9DF7E845C65BB208A5E2B28 /* Pods-Reminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NJ629K85TU;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
