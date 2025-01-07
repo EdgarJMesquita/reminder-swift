@@ -12,8 +12,13 @@
 "login.password.label" = "Senha";
 "login.email.label" = "Email";
 
+
 /* MARK: - HOME Screen */
+"home.welcome.message" = "Boas vindas";
+"home.welcome.button" = "Avaliar";
 
 /* MARK: - RECEIPTS Screen */
 
 /* MARK: - NEW RECEIPTS Screen */
+"newReceipt.title" = "Nova receita";
+"newReceipt.description" = "Adicione a sua prescrição médica para receber lembretes de quando tomar seu medicamento";
