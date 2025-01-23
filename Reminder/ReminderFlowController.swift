@@ -20,7 +20,6 @@ class ReminderFlowController {
     
     // MARK: - startFlow
     func start()->UINavigationController? {
-        let contentView = NewReceiptView()
         let startViewController = viewControllerFactory.makeSplashViewController(delegate: self)
         self.navigationController = UINavigationController(rootViewController: startViewController)
         return self.navigationController
@@ -51,7 +50,6 @@ extension ReminderFlowController: SplashFlowDelegate {
         func navigateToHome() {
             self.navigationController?.dismiss(animated: false)
             let viewController = UIViewController()
-            viewController.view.backgroundColor = .red
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
@@ -68,7 +66,13 @@ extension ReminderFlowController:HomeFlowDelegate {
     func navigateToNewReceipt(){
         let viewController = viewControllerFactory.makeNewReceiptViewController(delegate: self)
         navigationController?.pushViewController(viewController, animated: true)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    func navigateToMyReceipts(){
+        let viewController = viewControllerFactory.makeMyReceiptViewController(delegate: self)
+        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.navigationBar.isHidden = false
     }
 }
 
@@ -78,3 +82,6 @@ extension ReminderFlowController:NewReceiptFlowDelegate {
         navigationController?.popViewController(animated: true)
     }
 }
+
+
+extension ReminderFlowController: MyReceiptsFlowDelegate {}

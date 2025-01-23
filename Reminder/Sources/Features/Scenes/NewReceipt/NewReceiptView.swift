@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 class NewReceiptView: UIView {
     weak var delegate: NewReceiptViewDelegate?
@@ -49,28 +50,28 @@ class NewReceiptView: UIView {
         return stackView
     }()
     
-    private let medicineTextField: Input = {
+    let remedyInput: Input = {
         let input = Input(label: "Remédio", placeholder: "Nome do medicamento")
         return input
     }()
     
-    private let timeTextField: Input = {
+    let timeInput: Input = {
         let input = Input(label: "Horário", placeholder: "00:00")
         return input
     }()
     
-    private let intervalTextField: Input = {
+    let recurrenceInput: Input = {
         let input = Input(label: "Recorrência", placeholder: "Selecione")
         return input
     }()
     
-    private let checkbox:Checkbox = {
+    let checkbox:Checkbox = {
         let checkbox = Checkbox()
         checkbox.setTitle(title: "Tomar agora")
         return checkbox
     }()
     
-    private let addButton:UIButton = {
+    let addButton:UIButton = {
         let button = UIButton()
         button.setTitle("+ Adicionar", for: .normal)
         button.titleLabel?.font = Typograph.subHeading
@@ -79,6 +80,39 @@ class NewReceiptView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    private lazy var timePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .time
+        picker.preferredDatePickerStyle = .wheels
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+    
+    private lazy var recurrencePicker: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+    
+    private lazy var successAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "success")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.isHidden = true
+        
+        return animationView
+    }()
+    
+//    let recurrenceOptions = [
+//        "De hora em hora",
+//        "2 em 2 horas",
+//        "4 em 4 horas",
+//        "6 em 6 horas",
+//        "12 em 12 horas",
+//        "Um por dia"
+//    ]
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -91,18 +125,128 @@ class NewReceiptView: UIView {
     }
     
     private func setupView(){
+        setupHierarchy()
+        setupConstraints()
+        setupTimeInput()
+        setupRecurrenceInput()
+        
+        setupObservers()
+        validateInputs()
+        
+    
+    }
+    
+    private func clearFields(){
+        checkbox.isSelected = false
+        remedyInput.clear()
+        timeInput.clear()
+        recurrenceInput.clear()
+        addButton.isEnabled = false
+        addButton.backgroundColor = Colors.gray500
+    }
+    
+   
+    private func setupTimeInput(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, 
+                                         target: self,
+                                         action: #selector(didSelectTime))
+        
+        toolbar.setItems([doneButton], animated: true)
+        
+        timeInput.textField.inputView = timePicker
+        timeInput.textField.inputAccessoryView = toolbar
+    }
+    
+    @objc
+    private func didSelectTime(){
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        timeInput.textField.text = formatter.string(from: timePicker.date)
+        timeInput.textField.resignFirstResponder()
+        validateInputs()
+    }
+    
+    private func setupRecurrenceInput(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self,
+                                         action: #selector(didSelectRecurrence))
+        
+        toolbar.setItems([doneButton], animated: true)
+        recurrenceInput.textField.inputView = recurrencePicker
+        recurrenceInput.textField.inputAccessoryView = toolbar
+        
+        recurrencePicker.delegate = self
+        recurrencePicker.dataSource = self
+    }
+    
+    func playSuccessAnimation(){
+        successAnimationView.isHidden = false
+        clearFields()
+        successAnimationView.play() { [weak self] finished in
+            if finished {
+                self?.successAnimationView.isHidden = true
+            }
+        }
+    }
+    
+    @objc
+    private func didSelectRecurrence(){
+        let selectedRow = recurrencePicker.selectedRow(inComponent: 0)
+        recurrenceInput.textField.text = SelectOptions.recurrence[selectedRow].label
+        recurrenceInput.textField.resignFirstResponder()
+        validateInputs()
+    }
+    
+    private func addTapGesture(){
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
+    }
+    
+    @objc
+    private func didTapBackButton(){
+        delegate?.didTapGoBack()
+    }
+    
+    @objc
+    private func didTapAddButton(){
+        delegate?.didTapAddButton()
+    }
+    
+    @objc
+    private func validateInputs(){
+        let isRemedyFilled = !(remedyInput.textField.text ?? "").isEmpty
+        let isTimeFilled = !(timeInput.textField.text ?? "").isEmpty
+        let isIntervalFilled = !(recurrenceInput.textField.text ?? "").isEmpty
+        
+        addButton.isEnabled = isRemedyFilled && isTimeFilled && isIntervalFilled
+        addButton.backgroundColor = addButton.isEnabled ? Colors.primaryRedBase : Colors.gray500
+    }
+    
+    private func setupObservers(){
+        remedyInput.textField.addTarget(self, action: #selector(validateInputs), for: .editingChanged)
+
+    }
+    
+    private func setupHierarchy(){
         addSubview(backButton)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         addSubview(addButton)
         addSubview(stackView)
-        stackView.addArrangedSubview(medicineTextField)
-        stackView.addArrangedSubview(timeTextField)
-        stackView.addArrangedSubview(intervalTextField)
+        stackView.addArrangedSubview(remedyInput)
+        stackView.addArrangedSubview(timeInput)
+        stackView.addArrangedSubview(recurrenceInput)
         stackView.addArrangedSubview(checkbox)
-        setupConstraints()
-       
+        
+        addSubview(successAnimationView)
     }
+    
     
     private func setupConstraints(){
         
@@ -128,15 +272,30 @@ class NewReceiptView: UIView {
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -Metrics.semiHuge),
             addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -14),
             addButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
+            
+            successAnimationView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            successAnimationView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            successAnimationView.heightAnchor.constraint(equalToConstant: 240),
+            successAnimationView.widthAnchor.constraint(equalToConstant: 240),
         ])
     }
-    
-    private func addTapGesture(){
-        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+}
+
+extension NewReceiptView: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       return 1
     }
     
-    @objc
-    private func didTapBackButton(){
-        delegate?.didTapGoBack()
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return SelectOptions.recurrence.count
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return SelectOptions.recurrence[row].label
+    }
+}
+
+
+extension NewReceiptView: UIPickerViewDelegate {
+    
 }

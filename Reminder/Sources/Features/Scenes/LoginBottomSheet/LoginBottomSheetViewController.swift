@@ -28,15 +28,53 @@ class LoginBottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupGesture()
+  
         contentView.delegate = self
         viewModel.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc
+    private func keyboardWillShow(notification: Notification){
+        guard 
+            let userInfo = notification.userInfo,
+            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
+        else {
+            return
+        }
+        
+        let keyboardHeight = keyboardFrame.height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = -keyboardHeight / 1.5
+        }
+    }
+    
+    @objc
+    private func keyboardWillHide(notification: Notification){
+     
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = 0
+        }
     }
     
     private func setupUI(){
         self.view.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         setupConstraints()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func setupConstraints(){
@@ -49,16 +87,9 @@ class LoginBottomSheetViewController: UIViewController {
         contentView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
     }
     
-    private func setupGesture(){
-        
-    }
-    
-    private func handlePanGesture(){
-        
-    }
-    
     func animateShow(completion: (()->Void)?=nil){
         self.view.layoutIfNeeded()
+    
         contentView.transform = CGAffineTransform(translationX: 0, y: contentView.frame.height)
         UIView.animate(withDuration: 0.3, animations: {
             self.contentView.transform = .identity

@@ -16,6 +16,7 @@ class HomeView:UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private let contentBackground:UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray800
@@ -142,6 +143,11 @@ class HomeView:UIView {
     @objc
     private func didTapAddPrescription(){
         self.delegate?.didTapAddPrescription()
+    }
+    
+    @objc
+    private func didTapMyPrescription(){
+        self.delegate?.didTapMyPrescription()
     }
     
     private func setupConstraints(){

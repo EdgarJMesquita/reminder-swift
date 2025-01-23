@@ -19,6 +19,13 @@
 		6D031F3B2D231B38001EE167 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D031F3A2D231B38001EE167 /* ViewControllersFactory.swift */; };
 		6D0C9BC82D242F0600BF12BC /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C9BC72D242F0600BF12BC /* UIViewController+Ext.swift */; };
 		6D0C9BCD2D2460D700BF12BC /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C9BCC2D2460D700BF12BC /* UIImageView+Ext.swift */; };
+		6D42026A2D3E912C00BDA0FB /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4202692D3E912C00BDA0FB /* DBHelper.swift */; };
+		6D42026D2D3EB89500BDA0FB /* NewReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42026C2D3EB89500BDA0FB /* NewReceiptViewModel.swift */; };
+		6D598CC72D41121B00D32DD7 /* MyReceiptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D598CC62D41121B00D32DD7 /* MyReceiptsView.swift */; };
+		6D598CC92D41138700D32DD7 /* MyReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D598CC82D41138700D32DD7 /* MyReceiptsViewController.swift */; };
+		6D598CD02D412C0F00D32DD7 /* RemedyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D598CCF2D412C0F00D32DD7 /* RemedyCell.swift */; };
+		6D598CD22D413EE800D32DD7 /* RemedyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D598CD12D413EE800D32DD7 /* RemedyModel.swift */; };
+		6D598CD52D41600C00D32DD7 /* MyReceiptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D598CD42D41600C00D32DD7 /* MyReceiptsViewModel.swift */; };
 		6D5FAC962D25C8DA0040446F /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FAC952D25C8DA0040446F /* HomeViewDelegate.swift */; };
 		6D64DC1B2D2D663900D070BA /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64DC1A2D2D663900D070BA /* Checkbox.swift */; };
 		6D64DC1D2D2D981400D070BA /* NewReceiptFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64DC1C2D2D981400D070BA /* NewReceiptFlowDelegate.swift */; };
@@ -31,6 +38,8 @@
 		6DB56A842D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */; };
 		6DB56A872D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */; };
 		6DB56A892D21CF9600AEFC73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DB56A882D21CF9600AEFC73 /* GoogleService-Info.plist */; };
+		6DB7D9102D426E7F004173FB /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DB7D90F2D426E7F004173FB /* success.json */; };
+		6DB7D9142D428A4D004173FB /* SelectOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7D9132D428A4D004173FB /* SelectOptions.swift */; };
 		6DCDA9AE2D2B075A00AFA3DE /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCDA9AD2D2B075A00AFA3DE /* ButtonHomeView.swift */; };
 		6DE6EA2B2D1A0F91009CF554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA2A2D1A0F91009CF554 /* AppDelegate.swift */; };
 		6DE6EA2D2D1A0F91009CF554 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE6EA2C2D1A0F91009CF554 /* SceneDelegate.swift */; };
@@ -64,6 +73,13 @@
 		6D031F3A2D231B38001EE167 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		6D0C9BC72D242F0600BF12BC /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		6D0C9BCC2D2460D700BF12BC /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		6D4202692D3E912C00BDA0FB /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		6D42026C2D3EB89500BDA0FB /* NewReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptViewModel.swift; sourceTree = "<group>"; };
+		6D598CC62D41121B00D32DD7 /* MyReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsView.swift; sourceTree = "<group>"; };
+		6D598CC82D41138700D32DD7 /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
+		6D598CCF2D412C0F00D32DD7 /* RemedyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyCell.swift; sourceTree = "<group>"; };
+		6D598CD12D413EE800D32DD7 /* RemedyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyModel.swift; sourceTree = "<group>"; };
+		6D598CD42D41600C00D32DD7 /* MyReceiptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewModel.swift; sourceTree = "<group>"; };
 		6D5FAC952D25C8DA0040446F /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 		6D64DC1A2D2D663900D070BA /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		6D64DC1C2D2D981400D070BA /* NewReceiptFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptFlowDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +92,8 @@
 		6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewDelegate.swift; sourceTree = "<group>"; };
 		6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		6DB56A882D21CF9600AEFC73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DB7D90F2D426E7F004173FB /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		6DB7D9132D428A4D004173FB /* SelectOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptions.swift; sourceTree = "<group>"; };
 		6DCDA9AD2D2B075A00AFA3DE /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
 		6DE6EA272D1A0F91009CF554 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE6EA2A2D1A0F91009CF554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +141,7 @@
 		6D02DFAB2D2C7836003C59E4 /* NewReceipt */ = {
 			isa = PBXGroup;
 			children = (
+				6D42026B2D3EB88500BDA0FB /* ViewModel */,
 				6D02DFAC2D2C7847003C59E4 /* NewReceiptView.swift */,
 				6D02DFAE2D2C787A003C59E4 /* NewReceiptViewController.swift */,
 				6D64DC1C2D2D981400D070BA /* NewReceiptFlowDelegate.swift */,
@@ -166,6 +185,49 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		6D4202682D3E911E00BDA0FB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6D4202692D3E912C00BDA0FB /* DBHelper.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6D42026B2D3EB88500BDA0FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D42026C2D3EB89500BDA0FB /* NewReceiptViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D598CC52D41120400D32DD7 /* MyReceipts */ = {
+			isa = PBXGroup;
+			children = (
+				6D598CD32D415FE400D32DD7 /* ViewModel */,
+				6D598CCE2D412BE200D32DD7 /* UITableViewCell */,
+				6D598CC62D41121B00D32DD7 /* MyReceiptsView.swift */,
+				6D598CC82D41138700D32DD7 /* MyReceiptsViewController.swift */,
+			);
+			path = MyReceipts;
+			sourceTree = "<group>";
+		};
+		6D598CCE2D412BE200D32DD7 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6D598CCF2D412C0F00D32DD7 /* RemedyCell.swift */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		6D598CD32D415FE400D32DD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D598CD42D41600C00D32DD7 /* MyReceiptsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6D64DC192D2D662F00D070BA /* Checkbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,9 +251,16 @@
 			children = (
 				6DB56A862D21CA7900AEFC73 /* LoginBottomSheetViewModel.swift */,
 				6D031F2F2D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift */,
-				6D031F312D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6DB7D90C2D426834004173FB /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				6DB7D90F2D426E7F004173FB /* success.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		6DCDA9AF2D2B076500AFA3DE /* ButtonHomeView */ = {
@@ -246,6 +315,7 @@
 		6DE6EA3F2D1AE41B009CF554 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6D598CC52D41120400D32DD7 /* MyReceipts */,
 				6D02DFAB2D2C7836003C59E4 /* NewReceipt */,
 				6DF8F8F62D23AC8D00283374 /* Home */,
 				6DFBA89B2D2071EC00511006 /* LoginBottomSheet */,
@@ -271,6 +341,7 @@
 				6DE6EA492D1AF2C8009CF554 /* UIColor+Ext.swift */,
 				6D8F08F52D1E06E4007DD3AE /* Typograph.swift */,
 				6D8F08F72D1E08FA007DD3AE /* Metrics.swift */,
+				6DB7D9132D428A4D004173FB /* SelectOptions.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -279,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				6DF8F8F12D23903700283374 /* User.swift */,
+				6D598CD12D413EE800D32DD7 /* RemedyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +378,7 @@
 		6DF8F8FD2D23AEA400283374 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6D4202682D3E911E00BDA0FB /* Database */,
 				6D0C9BC92D24601E00BF12BC /* Components */,
 				6DFBA8A62D2081C200511006 /* Extensions */,
 				6D031F352D231AC2001EE167 /* DependencyInjection */,
@@ -331,6 +404,7 @@
 				6DFBA89E2D20724200511006 /* LoginBottomSheetView.swift */,
 				6DFBA89C2D20720600511006 /* LoginBottomSheetViewController.swift */,
 				6DB56A832D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift */,
+				6D031F312D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift */,
 			);
 			path = LoginBottomSheet;
 			sourceTree = "<group>";
@@ -338,6 +412,7 @@
 		6DFBA8A02D20803400511006 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DB7D90C2D426834004173FB /* Lottie */,
 				6DB56A762D21B98300AEFC73 /* Fonts */,
 				6DE6EA332D1A0F94009CF554 /* Assets.xcassets */,
 				6DFBA8A32D20811100511006 /* Localizable.strings */,
@@ -426,6 +501,7 @@
 			files = (
 				6DB56A822D21BA2E00AEFC73 /* NunitoSans-SemiBold.ttf in Resources */,
 				6DFBA8A52D20811100511006 /* Localizable.strings in Resources */,
+				6DB7D9102D426E7F004173FB /* success.json in Resources */,
 				6DB56A892D21CF9600AEFC73 /* GoogleService-Info.plist in Resources */,
 				6DB56A812D21BA2E00AEFC73 /* NunitoSans-ExtraBold.ttf in Resources */,
 				6DE6EA342D1A0F94009CF554 /* Assets.xcassets in Resources */,
@@ -489,8 +565,12 @@
 				6DE6EA422D1AE44A009CF554 /* SplashViewController.swift in Sources */,
 				6DE6EA482D1AF0B1009CF554 /* Colors.swift in Sources */,
 				6DF8F9002D23AEFE00283374 /* HomeViewModel.swift in Sources */,
+				6D598CD22D413EE800D32DD7 /* RemedyModel.swift in Sources */,
 				6D031F3B2D231B38001EE167 /* ViewControllersFactory.swift in Sources */,
+				6D598CC92D41138700D32DD7 /* MyReceiptsViewController.swift in Sources */,
+				6DB7D9142D428A4D004173FB /* SelectOptions.swift in Sources */,
 				6D031F392D231AED001EE167 /* ViewControllersFactoryProtocol.swift in Sources */,
+				6D598CD52D41600C00D32DD7 /* MyReceiptsViewModel.swift in Sources */,
 				6D031F322D23091F001EE167 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				6DF8F8FA2D23ACBF00283374 /* HomeFlowDelegate.swift in Sources */,
 				6DE6EA442D1AE4F2009CF554 /* SplashView.swift in Sources */,
@@ -507,12 +587,16 @@
 				6DE6EA2B2D1A0F91009CF554 /* AppDelegate.swift in Sources */,
 				6D031F302D2307F2001EE167 /* LoginBottomSheetViewModelDelegate.swift in Sources */,
 				6D02DFAF2D2C787A003C59E4 /* NewReceiptViewController.swift in Sources */,
+				6D598CD02D412C0F00D32DD7 /* RemedyCell.swift in Sources */,
 				6D031F2E2D22E61B001EE167 /* ReminderFlowController.swift in Sources */,
 				6D64DC1F2D2D9ECC00D070BA /* NewReceiptViewDelegate.swift in Sources */,
 				6DE6EA2D2D1A0F91009CF554 /* SceneDelegate.swift in Sources */,
 				6D64DC1B2D2D663900D070BA /* Checkbox.swift in Sources */,
+				6D42026D2D3EB89500BDA0FB /* NewReceiptViewModel.swift in Sources */,
 				6D0C9BCD2D2460D700BF12BC /* UIImageView+Ext.swift in Sources */,
 				6DF8F8F52D23912B00283374 /* UserDefaultsManager.swift in Sources */,
+				6D42026A2D3E912C00BDA0FB /* DBHelper.swift in Sources */,
+				6D598CC72D41121B00D32DD7 /* MyReceiptsView.swift in Sources */,
 				6D8F08F82D1E08FA007DD3AE /* Metrics.swift in Sources */,
 				6DF8F8FC2D23ADE900283374 /* HomeView.swift in Sources */,
 				6DB56A842D21C59900AEFC73 /* LoginBottomSheetViewDelegate.swift in Sources */,

@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 class Checkbox: UIButton {
-    public private(set) var isChecked: Bool = false
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -44,8 +43,7 @@ class Checkbox: UIButton {
         
     @objc
     private func toogleCheck(){
-        isChecked.toggle()
-        self.isSelected = isChecked
+        self.isSelected.toggle()
     }
     
     func setTitle(title:String) {

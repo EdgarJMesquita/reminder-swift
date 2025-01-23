@@ -9,4 +9,6 @@ import Foundation
 
 protocol NewReceiptViewDelegate: AnyObject {
     func didTapGoBack()
+    
+    func didTapAddButton()
 }

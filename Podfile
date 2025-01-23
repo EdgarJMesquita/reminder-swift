@@ -8,4 +8,6 @@ target 'Reminder' do
   # Pods for Reminder
 
   pod 'Firebase/Auth'
+  pod 'SQLite.swift'
+  pod 'lottie-ios'	
 end

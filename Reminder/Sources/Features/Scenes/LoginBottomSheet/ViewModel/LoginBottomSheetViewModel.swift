@@ -30,7 +30,7 @@ class LoginBottomSheetViewModel {
     func doAuth(user:String, password:String, completion: (() -> Void)?=nil){
         print("User:\(user)\nPassword: \(password)")
         Auth.auth().signIn(withEmail: user, password: password) { [weak self] authResult, error in
-            if let error = error {
+            if error != nil  {
                 self?.delegate?.onLoginFailure(message: "Erro ao realizar o login, verifique as credenciais digitadas.")
             } else {
                 self?.delegate?.onLoginSuccess(userNameLogin: user)

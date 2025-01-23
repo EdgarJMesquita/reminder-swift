@@ -52,6 +52,7 @@ class Input: UIView {
         
     }
     
+    
     private func configurePlaceholder(placeholder:String){
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: Colors.gray200])
     }
@@ -77,5 +78,9 @@ class Input: UIView {
     
     func getText()->String{
         return textField.text ?? ""
+    }
+    
+    func clear(){
+        textField.text = ""
     }
 }

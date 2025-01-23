@@ -10,4 +10,5 @@ import Foundation
 protocol HomeViewDelegate:AnyObject {
     func didTapAvatar()
     func didTapAddPrescription()
+    func didTapMyPrescription()
 }

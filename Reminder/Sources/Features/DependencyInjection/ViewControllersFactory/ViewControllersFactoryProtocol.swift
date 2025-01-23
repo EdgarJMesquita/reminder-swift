@@ -9,7 +9,12 @@ import Foundation
 
 protocol ViewControllersFactoryProtocol: AnyObject {
     func makeSplashViewController(delegate: SplashFlowDelegate) -> SplashViewController
+    
     func makeLoginBottomSheetViewController(delegate: LoginBottomSheetFlowDelegate) -> LoginBottomSheetViewController
+    
     func makeHomeViewController(delegate: HomeFlowDelegate ) -> HomeViewController
+    
     func makeNewReceiptViewController(delegate: NewReceiptFlowDelegate ) ->NewReceiptViewController
+    
+    func makeMyReceiptViewController(delegate: MyReceiptsFlowDelegate) ->MyReceiptsViewController
 }

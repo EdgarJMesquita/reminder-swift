@@ -111,7 +111,7 @@ class LoginBottomSheetView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Typograph.subHeading
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
+       
         button.setTitle("", for: .disabled)
         return button
     }()
@@ -124,6 +124,9 @@ class LoginBottomSheetView: UIView {
         
         emailTextField.text = "edgar@email.com"
         passwordTextField.text = "asdfasdf"
+        
+        setupDelegates()
+   
     }
     
     required init?(coder: NSCoder) {
@@ -133,6 +136,11 @@ class LoginBottomSheetView: UIView {
     @objc
     private func exampleTapped(){
         print("Clicou na label")
+    }
+    
+    private func setupDelegates(){
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     private func setupUI(){
@@ -156,6 +164,8 @@ class LoginBottomSheetView: UIView {
         passwordTextField.rightView = eyeButton
         let exampleGesture = UITapGestureRecognizer(target: self, action: #selector(exampleTapped))
         title.addGestureRecognizer(exampleGesture)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
     }
     
     private func setupConstraints(){
@@ -235,4 +245,11 @@ class LoginBottomSheetView: UIView {
            textField.isSecureTextEntry.toggle()
        }
  
+}
+
+extension LoginBottomSheetView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

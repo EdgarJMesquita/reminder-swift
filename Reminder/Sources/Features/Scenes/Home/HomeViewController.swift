@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class HomeViewController: UIViewController {
-    let contentView:HomeView
+    let contentView: HomeView
     weak var delegate: HomeFlowDelegate?
     
-    init(contentView:HomeView, delegate: HomeFlowDelegate) {
+    init(contentView: HomeView, delegate: HomeFlowDelegate) {
         self.delegate = delegate
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
@@ -30,7 +30,15 @@ class HomeViewController: UIViewController {
         setupNavigationBar()
         setupUserData()
         setupActionForNewReceipt()
+        setupActionForMyReceipt()
+       
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+
     
     private func setupUserData(){
         if UserDefaultsManager.loadUser() != nil {
@@ -42,9 +50,10 @@ class HomeViewController: UIViewController {
         }
     }
  
-
+    
     
     private func setupNavigationBar(){
+        self.navigationController?.navigationBar.isHidden = false
         let logoutButton = UIBarButtonItem(image: UIImage(named: "Logout"),
                                            style: .plain,
                                            target: self,
@@ -52,13 +61,18 @@ class HomeViewController: UIViewController {
         )
         logoutButton.tintColor = Colors.primaryRedBase
         self.navigationItem.hidesBackButton = true
-        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.rightBarButtonItem = logoutButton
     }
     
     private func setupActionForNewReceipt(){
         contentView.addPrescription.tapAction = { [weak self] in
             self?.didTapAddPrescription()
+        }
+    }
+    
+    private func setupActionForMyReceipt(){
+        contentView.myPrescriptions.tapAction = { [weak self] in
+            self?.didTapMyPrescription()
         }
     }
     
@@ -103,6 +117,10 @@ extension HomeViewController:HomeViewDelegate {
     
     func didTapAddPrescription() {
         delegate?.navigateToNewReceipt()
+    }
+    
+    func didTapMyPrescription(){
+        delegate?.navigateToMyReceipts()
     }
 }
 
