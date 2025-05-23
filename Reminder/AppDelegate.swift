@@ -33,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    func registerForNotifications(){
+    func registerForNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert,.sound,.badge]) { granted, error in
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
                 print("Permissão concedida para enviar notificações")
             } else if let error {
@@ -45,4 +45,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

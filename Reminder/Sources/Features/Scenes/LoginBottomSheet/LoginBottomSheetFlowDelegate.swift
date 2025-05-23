@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol LoginBottomSheetFlowDelegate:AnyObject {
+protocol LoginBottomSheetFlowDelegate: AnyObject {
     func navigateToHome()
 }

@@ -7,8 +7,7 @@
 
 import Foundation
 
-
 protocol LoginBottomSheetViewModelDelegate: AnyObject {
-    func onLoginSuccess(userNameLogin:String)
-    func onLoginFailure(message:String)
+    func onLoginSuccess(userNameLogin: String)
+    func onLoginFailure(message: String)
 }

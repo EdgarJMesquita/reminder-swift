@@ -12,14 +12,14 @@ class ReminderFlowController {
     // MARK: - Properties
     private var navigationController: UINavigationController?
     private let viewControllerFactory: ViewControllersFactoryProtocol
-    
+
     // MARK: - init
-    public init(){
+    public init() {
         self.viewControllerFactory = ViewControllersFactory()
     }
-    
+
     // MARK: - startFlow
-    func start()->UINavigationController? {
+    func start() -> UINavigationController? {
         let startViewController = viewControllerFactory.makeSplashViewController(delegate: self)
         self.navigationController = UINavigationController(rootViewController: startViewController)
         return self.navigationController
@@ -30,9 +30,9 @@ class ReminderFlowController {
 extension ReminderFlowController: LoginBottomSheetFlowDelegate {
     func navigateToHome() {
         self.navigationController?.dismiss(animated: false)
-        
+
         let viewController = viewControllerFactory.makeHomeViewController(delegate: self)
-        
+
         self.navigationController?.pushViewController(viewController, animated: false)
     }
 }
@@ -46,42 +46,40 @@ extension ReminderFlowController: SplashFlowDelegate {
         self.navigationController?.present(loginBottomSheet, animated: false) {
             loginBottomSheet.animateShow()
         }
-        
+
         func navigateToHome() {
             self.navigationController?.dismiss(animated: false)
             let viewController = UIViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
+
 }
 
 // MARK: - Home
-extension ReminderFlowController:HomeFlowDelegate {
+extension ReminderFlowController: HomeFlowDelegate {
     func logout() {
         self.navigationController?.popViewController(animated: true)
         self.openLoginBottomSheet()
     }
-    
-    func navigateToNewReceipt(){
+
+    func navigateToNewReceipt() {
         let viewController = viewControllerFactory.makeNewReceiptViewController(delegate: self)
         navigationController?.pushViewController(viewController, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
-    
-    func navigateToMyReceipts(){
+
+    func navigateToMyReceipts() {
         let viewController = viewControllerFactory.makeMyReceiptViewController(delegate: self)
         navigationController?.pushViewController(viewController, animated: true)
         navigationController?.navigationBar.isHidden = false
     }
 }
 
-
-extension ReminderFlowController:NewReceiptFlowDelegate {
+extension ReminderFlowController: NewReceiptFlowDelegate {
     func goBack() {
         navigationController?.popViewController(animated: true)
     }
 }
-
 
 extension ReminderFlowController: MyReceiptsFlowDelegate {}

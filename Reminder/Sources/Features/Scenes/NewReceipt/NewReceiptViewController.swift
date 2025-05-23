@@ -7,57 +7,66 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
-class NewReceiptViewController:UIViewController {
+class NewReceiptViewController: UIViewController {
     private let contentView: NewReceiptView
-    weak var delegate:NewReceiptFlowDelegate?
+    weak var delegate: NewReceiptFlowDelegate?
     private let viewModel: NewReceiptViewModel
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-
+        let onboardingView = CFOnboardingView()
+        onboardingView.presentOnboarding(
+            on: self.view,
+            with: [
+                (nil, "Nome do medicamento"),
+                (nil, "Horário"),
+                (nil, "Recorrência")
+            ]
+        )
     }
-    
-    init(contentView: NewReceiptView,viewModel: NewReceiptViewModel, delegate: NewReceiptFlowDelegate) {
+
+    init(contentView: NewReceiptView, viewModel: NewReceiptViewModel, delegate: NewReceiptFlowDelegate) {
         self.contentView = contentView
         self.delegate = delegate
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.contentView.delegate = self
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setupView(){
+
+    private func setupView() {
         view.addSubview(contentView)
-        view.backgroundColor = Colors.gray800
+        view.backgroundColor = CFColors.gray800
         navigationController?.navigationBar.isHidden = true
         setupConstraints()
     }
-    
-    private func setupConstraints(){
+
+    private func setupConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
+
 }
 
-
-extension NewReceiptViewController:NewReceiptViewDelegate {
+extension NewReceiptViewController: NewReceiptViewDelegate {
     func didTapAddButton() {
         let remedy = contentView.remedyInput.getText()
         let time = contentView.timeInput.getText()
         let recurrence = contentView.recurrenceInput.getText()
         let takeNow = contentView.checkbox.isSelected
-   
+
         viewModel.addReceipt(remedy: remedy,
                              time: time,
                              recurrence: recurrence,
@@ -65,7 +74,7 @@ extension NewReceiptViewController:NewReceiptViewDelegate {
 
         contentView.playSuccessAnimation()
     }
-    
+
     func didTapGoBack() {
         delegate?.goBack()
     }

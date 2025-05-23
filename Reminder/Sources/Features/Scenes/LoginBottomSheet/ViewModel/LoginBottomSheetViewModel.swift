@@ -10,9 +10,9 @@ import Firebase
 
 class LoginBottomSheetViewModel {
 //    var user: User?
-    weak var delegate:LoginBottomSheetViewModelDelegate?
-    
-    init (){
+    weak var delegate: LoginBottomSheetViewModelDelegate?
+
+    init () {
 
 //        self.user = Auth.auth().currentUser
 //        print(self.user ?? "No User")
@@ -23,14 +23,13 @@ class LoginBottomSheetViewModel {
 //               self?.successResult?()
 //           }
 //        }
-        
-        
+
     }
-    
-    func doAuth(user:String, password:String, completion: (() -> Void)?=nil){
+
+    func doAuth(user: String, password: String, completion: (() -> Void)?=nil) {
         print("User:\(user)\nPassword: \(password)")
-        Auth.auth().signIn(withEmail: user, password: password) { [weak self] authResult, error in
-            if error != nil  {
+        Auth.auth().signIn(withEmail: user, password: password) { [weak self] _, error in
+            if error != nil {
                 self?.delegate?.onLoginFailure(message: "Erro ao realizar o login, verifique as credenciais digitadas.")
             } else {
                 self?.delegate?.onLoginSuccess(userNameLogin: user)

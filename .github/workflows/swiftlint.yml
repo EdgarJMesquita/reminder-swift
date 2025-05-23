@@ -1,0 +1,38 @@
+name: Swiftlint Pipeline
+
+on:
+  pull_request:
+    branchs:
+      - main
+      - develop
+      
+    push:
+      branchs:
+        - main
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions@checkout@v3
+        
+    
+
+
+disabled_rules:
+  - line-length
+  
+opt_in_rules:
+  - empty_count
+
+included:
+  - Reminder
+excluded:
+  - Carthage
+  - Pods
+  - Sources/ExcludedFolder
+  - Sources/ExcludedFile.swift
+  - Sources/*/ExcludedFile.swift
+

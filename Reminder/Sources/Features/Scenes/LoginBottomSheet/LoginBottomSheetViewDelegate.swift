@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol LoginBottomSheetViewDelegate: AnyObject {
-    func sendLoginData(user: String, password: String, completion: (()->Void)?)
+    func sendLoginData(user: String, password: String, completion: (() -> Void)?)
 }

@@ -11,16 +11,16 @@ import UIKit
 final class ViewControllersFactory: ViewControllersFactoryProtocol {
     func makeHomeViewController(delegate: HomeFlowDelegate) -> HomeViewController {
         let contentView = HomeView()
-        let viewController = HomeViewController(contentView: contentView,delegate: delegate)
+        let viewController = HomeViewController(contentView: contentView, delegate: delegate)
         return viewController
     }
-    
+
     func makeSplashViewController(delegate: SplashFlowDelegate) -> SplashViewController {
         let contentView = SplashView()
-        let viewController = SplashViewController(contentView: contentView,delegate: delegate)
+        let viewController = SplashViewController(contentView: contentView, delegate: delegate)
         return viewController
     }
-    
+
     func makeLoginBottomSheetViewController(delegate: LoginBottomSheetFlowDelegate) -> LoginBottomSheetViewController {
         let viewModel = LoginBottomSheetViewModel()
         let contentView = LoginBottomSheetView()
@@ -31,7 +31,7 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
         )
         return viewController
     }
-    
+
     func makeNewReceiptViewController(delegate: NewReceiptFlowDelegate) -> NewReceiptViewController {
         let contentView = NewReceiptView()
         let viewModel = NewReceiptViewModel()
@@ -42,12 +42,12 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
         )
         return viewController
     }
-    
+
     func makeMyReceiptViewController(delegate: MyReceiptsFlowDelegate) -> MyReceiptsViewController {
         let contentView = MyReceiptsView()
 //        let viewModel = NewReceiptViewModel()
         let viewController = MyReceiptsViewController(contentView: contentView, delegate: delegate)
-           
+
         return viewController
     }
 }

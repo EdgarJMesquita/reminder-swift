@@ -7,56 +7,57 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
 class LoginBottomSheetView: UIView {
     public weak var delegate: LoginBottomSheetViewDelegate?
-    
-    private let handleArea:UIView = {
+
+    private let handleArea: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
-        view.layer.cornerRadius = Metrics.tiny
+        view.layer.cornerRadius = CFMetrics.tiny
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private let title:UILabel = {
+
+    private let title: UILabel = {
         let label = UILabel()
         label.text = "login.label.title".localized
-        label.font = Typograph.subHeading
-        label.textColor = Colors.gray100
+        label.font = CFTypography.subHeading
+        label.textColor = CFColors.gray100
         label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let labelEmail:UILabel = {
+
+    private let labelEmail: UILabel = {
         let label = UILabel()
         label.text = "login.email.label".localized
-        label.font = Typograph.label
-        label.textColor = Colors.gray100
+        label.font = CFTypography.label
+        label.textColor = CFColors.gray100
         label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private let emailTextField: UITextField = {
         let textView = UITextField()
         textView.placeholder = "login.email.placeholder".localized
         textView.borderStyle = .roundedRect
-        textView.layer.cornerRadius = Metrics.tiny
-        textView.layer.borderColor = Colors.gray400.cgColor
+        textView.layer.cornerRadius = CFMetrics.tiny
+        textView.layer.borderColor = CFColors.gray400.cgColor
         textView.layer.borderWidth = 1
         textView.keyboardType = .emailAddress
         textView.autocapitalizationType = .none
-   
-        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: Metrics.small, height: 20))
+
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: CFMetrics.small, height: 20))
         textView.leftView = paddingView
         textView.leftViewMode = .always
-        
+
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-    
+
     private let eyeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "eye"), for: .normal)
@@ -65,36 +66,36 @@ class LoginBottomSheetView: UIView {
         button.heightAnchor.constraint(equalToConstant: 56).isActive = true
         return button
     }()
-    
-    private let labelPassword:UILabel = {
+
+    private let labelPassword: UILabel = {
         let label = UILabel()
         label.text = "login.password.label".localized
-        label.font = Typograph.label
-        label.textColor = Colors.gray100
+        label.font = CFTypography.label
+        label.textColor = CFColors.gray100
         label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private let passwordTextField: UITextField = {
         let textView = UITextField()
         textView.borderStyle = .roundedRect
-        textView.layer.cornerRadius = Metrics.tiny
-        textView.layer.borderColor = Colors.gray400.cgColor
+        textView.layer.cornerRadius = CFMetrics.tiny
+        textView.layer.borderColor = CFColors.gray400.cgColor
         textView.layer.borderWidth = 1
         textView.isSecureTextEntry = true
-        
-        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: Metrics.small, height: 20))
+
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: CFMetrics.small, height: 20))
         textView.leftView = paddingView
         textView.leftViewMode = .always
-        
+
         textView.rightViewMode = .always
-        
+
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-    
-    private let loader:UIActivityIndicatorView = {
+
+    private let loader: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.hidesWhenStopped = true
         indicator.color = .white
@@ -102,51 +103,50 @@ class LoginBottomSheetView: UIView {
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
-    
-    private let loginButton:UIButton = {
+
+    private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("login.button.title".localized, for: .normal)
-        button.backgroundColor = Colors.primaryRedBase
-        button.layer.cornerRadius = Metrics.medium
+        button.backgroundColor = CFColors.primaryRedBase
+        button.layer.cornerRadius = CFMetrics.medium
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Typograph.subHeading
+        button.titleLabel?.font = CFTypography.subHeading
         button.translatesAutoresizingMaskIntoConstraints = false
-       
+
         button.setTitle("", for: .disabled)
         return button
     }()
-    
-    
-    override init(frame:CGRect){
+
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
         setupGesture()
-        
+
         emailTextField.text = "edgar@email.com"
         passwordTextField.text = "asdfasdf"
-        
+
         setupDelegates()
-   
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc
-    private func exampleTapped(){
+    private func exampleTapped() {
         print("Clicou na label")
     }
-    
-    private func setupDelegates(){
+
+    private func setupDelegates() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
-    private func setupUI(){
+
+    private func setupUI() {
         self.backgroundColor = .white
-        self.layer.cornerRadius = Metrics.small
-        
+        self.layer.cornerRadius = CFMetrics.small
+
         addSubview(handleArea)
         addSubview(title)
         addSubview(labelEmail)
@@ -154,78 +154,78 @@ class LoginBottomSheetView: UIView {
         addSubview(labelPassword)
         addSubview(passwordTextField)
         addSubview(loginButton)
-        
+
         setupLoader()
         setupConstraints()
     }
-    
-    private func setupGesture(){
+
+    private func setupGesture() {
         eyeButton.addTarget(self, action: #selector(togglePasswordVisibility(_:)), for: .touchUpInside)
         passwordTextField.rightView = eyeButton
         let exampleGesture = UITapGestureRecognizer(target: self, action: #selector(exampleTapped))
         title.addGestureRecognizer(exampleGesture)
-        
+
         loginButton.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
     }
-    
-    private func setupConstraints(){
+
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            handleArea.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.small),
+            handleArea.topAnchor.constraint(equalTo: self.topAnchor, constant: CFMetrics.small),
             handleArea.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             handleArea.widthAnchor.constraint(equalToConstant: 40),
             handleArea.heightAnchor.constraint(equalToConstant: 6),
-            
-            title.topAnchor.constraint(equalTo: handleArea.bottomAnchor, constant: Metrics.medium),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            
-            labelEmail.topAnchor.constraint(equalTo: self.title.bottomAnchor, constant: Metrics.huge),
-            labelEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            
-            emailTextField.topAnchor.constraint(equalTo: self.labelEmail.bottomAnchor, constant: Metrics.small),
-            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.semiHuge),
-            emailTextField.heightAnchor.constraint(equalToConstant: Metrics.inputSize),
-    
-            labelPassword.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: Metrics.medium),
-            labelPassword.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            
-            passwordTextField.topAnchor.constraint(equalTo: self.labelPassword.bottomAnchor, constant: Metrics.small),
-            passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.semiHuge),
-            passwordTextField.heightAnchor.constraint(equalToConstant: Metrics.inputSize),
-            
-            loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.semiHuge),
-            loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.semiHuge),
-            loginButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Metrics.huge)
+
+            title.topAnchor.constraint(equalTo: handleArea.bottomAnchor, constant: CFMetrics.medium),
+            title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+
+            labelEmail.topAnchor.constraint(equalTo: self.title.bottomAnchor, constant: CFMetrics.huge),
+            labelEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+
+            emailTextField.topAnchor.constraint(equalTo: self.labelEmail.bottomAnchor, constant: CFMetrics.small),
+            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -CFMetrics.semiHuge),
+            emailTextField.heightAnchor.constraint(equalToConstant: CFMetrics.inputSize),
+
+            labelPassword.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: CFMetrics.medium),
+            labelPassword.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+
+            passwordTextField.topAnchor.constraint(equalTo: self.labelPassword.bottomAnchor, constant: CFMetrics.small),
+            passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+            passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -CFMetrics.semiHuge),
+            passwordTextField.heightAnchor.constraint(equalToConstant: CFMetrics.inputSize),
+
+            loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: CFMetrics.semiHuge),
+            loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -CFMetrics.semiHuge),
+            loginButton.heightAnchor.constraint(equalToConstant: CFMetrics.buttonSize),
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -CFMetrics.huge)
         ])
     }
-    
-    private func setupLoader(){
+
+    private func setupLoader() {
         loginButton.addSubview(loader)
         loader.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loader.centerXAnchor.constraint(equalTo: self.loginButton.centerXAnchor),
             loader.centerYAnchor.constraint(equalTo: self.loginButton.centerYAnchor)
         ])
-       
+
     }
-    
-    private func showLoader(){
+
+    private func showLoader() {
         loader.startAnimating()
         loginButton.imageView?.alpha = 0
         loginButton.isEnabled = false
     }
-    
-    private func hideLoader(){
+
+    private func hideLoader() {
         loader.stopAnimating()
         loginButton.imageView?.alpha = 1
         loginButton.isEnabled = true
-        
+
     }
-    
+
     @objc
-    private func loginButtonDidTapped(){
+    private func loginButtonDidTapped() {
         guard let user = emailTextField.text, let password = passwordTextField.text else {
             return
         }
@@ -238,13 +238,13 @@ class LoginBottomSheetView: UIView {
             }
         )
     }
-    
+
     @objc func togglePasswordVisibility(_ sender: UIButton) {
            guard let textField = sender.superview as? UITextField else { return }
            sender.isSelected.toggle()
            textField.isSecureTextEntry.toggle()
        }
- 
+
 }
 
 extension LoginBottomSheetView: UITextFieldDelegate {

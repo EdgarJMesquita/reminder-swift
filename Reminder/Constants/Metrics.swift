@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct Metrics {
+public struct Metrics2 {
     public static var huge: CGFloat = 48
     public static var semiHuge: CGFloat = 32
     public static var medium: CGFloat = 24

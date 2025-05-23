@@ -10,6 +10,6 @@ import Foundation
 public protocol HomeFlowDelegate: AnyObject {
     func logout()
     func navigateToNewReceipt()
-    
+
     func navigateToMyReceipts()
 }

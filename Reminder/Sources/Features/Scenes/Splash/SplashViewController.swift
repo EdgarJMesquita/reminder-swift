@@ -7,35 +7,36 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
 class SplashViewController: UIViewController {
-    let contentView:SplashView
+    let contentView: SplashView
     public weak var delegate: SplashFlowDelegate?
-    
-    init(contentView: SplashView,delegate: SplashFlowDelegate) {
+
+    init(contentView: SplashView, delegate: SplashFlowDelegate) {
         self.delegate = delegate
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         startBreathingAnimation()
     }
-    
-    private func setupUI(){
+
+    private func setupUI() {
         self.view.addSubview(contentView)
         self.navigationController?.navigationBar.isHidden = true
-        self.view.backgroundColor = Colors.primaryRedBase
+        self.view.backgroundColor = CFColors.primaryRedBase
         setupConstraints()
     }
-    
-    private func setupConstraints(){
+
+    private func setupConstraints() {
         self.setupContentViewToBounds(contentView: contentView)
     }
 
@@ -49,10 +50,9 @@ class SplashViewController: UIViewController {
    }
 }
 
-
 // MARK: - Animations
 extension SplashViewController {
-    private func startBreathingAnimation(){
+    private func startBreathingAnimation() {
         self.view.layoutIfNeeded()
         UIView.animate(
             withDuration: 1.5,
@@ -60,14 +60,14 @@ extension SplashViewController {
             animations: {
                 let scale = CGAffineTransform(scaleX: 1.1, y: 1.1)
                 self.contentView.logoImageView.transform = scale
-            },             
+            },
             completion: {_ in
                 self.decideFlow()
             }
         )
     }
-    
-    private func animateLogoUp(){
+
+    private func animateLogoUp() {
         UIView.animate(
                 withDuration: 0.5,
                 delay: 0.0,
