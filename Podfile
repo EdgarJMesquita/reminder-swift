@@ -11,5 +11,5 @@ target 'Reminder' do
   pod 'SQLite.swift'
   pod 'lottie-ios'	
   
-  pod 'CoreFramework', :git=> 'https://github.com/EdgarJMesquita/reminder-core-framework.git'
+  pod 'CoreFramework', :git=> 'https://github.com/EdgarJMesquita/reminder-core-framework.git', :tag=>'1.0.4'
 end

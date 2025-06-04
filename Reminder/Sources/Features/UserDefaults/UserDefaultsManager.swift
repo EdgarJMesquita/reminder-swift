@@ -12,6 +12,7 @@ class UserDefaultsManager {
     private static let userKey = "userKey"
     private static let userNameKey = "userName"
     private static let userPhotoKey = "userPhoto"
+    private static let onboardingSeen = "onboardingSeen"
 
     static func saveUser(user: User) {
         let encoder = JSONEncoder()
@@ -68,5 +69,14 @@ class UserDefaultsManager {
     static func removeUsername() {
         UserDefaults.standard.removeObject(forKey: self.userNameKey)
         UserDefaults.standard.synchronize()
+    }
+
+    static func markOnboardingSeen() {
+        UserDefaults.standard.set(true, forKey: onboardingSeen)
+        UserDefaults.standard.synchronize()
+    }
+
+    static func hasSeenOnboarding() -> Bool {
+        return UserDefaults.standard.bool(forKey: onboardingSeen)
     }
 }

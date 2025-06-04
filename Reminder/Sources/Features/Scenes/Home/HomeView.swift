@@ -63,21 +63,11 @@ class HomeView: UIView {
         return textField
     }()
 
-    private let feedbackButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("home.welcome.button".localized, for: .normal)
-        button.backgroundColor = CFColors.gray100
-        button.setTitleColor(CFColors.gray800, for: .normal)
-        button.layer.cornerRadius = CFMetrics.medium
-
-        button.titleLabel?.font = CFTypography.subHeading
-        button.setImage(UIImage(named: "Star"), for: .normal)
-
-        var configuration = UIButton.Configuration.plain()
-        configuration.imagePadding = 12
-        button.configuration = configuration
-
+    private let feedbackButton: CFButton = {
+        let button = CFButton(title: "home.welcome.button".localized,
+                              icon: .star,
+                              iconPosition: .leading,
+                              backgroundColor: CFColors.gray100)
         return button
     }()
 
@@ -106,11 +96,12 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
-        setupTextField()
+        setupDelegates()
     }
 
-    private func setupTextField() {
+    private func setupDelegates() {
         nameTextField.delegate = self
+        feedbackButton.delegate = self
     }
 
     private func setupUI() {
@@ -129,6 +120,7 @@ class HomeView: UIView {
 
         setupConstraints()
         setupImageGesture()
+
     }
 
     private func setupImageGesture() {
@@ -198,5 +190,19 @@ extension HomeView: UITextFieldDelegate {
         let userName = nameTextField.text ?? ""
         UserDefaultsManager.saveUserName(name: userName)
         return true
+    }
+}
+
+extension HomeView: CFButtonDelegate {
+    func buttonAction() {
+        if
+            let url = URL(string: "itms-apps://itunes.apple.com/app/6450132001?action=write-review"),
+            UIApplication.shared.canOpenURL(url) {
+
+            UIApplication.shared.open(url)
+        } else {
+            print("Not possible to open url")
+        }
+
     }
 }

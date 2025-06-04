@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Lottie
 import CoreFramework
+import Combine
 
 class NewReceiptView: UIView {
     weak var delegate: NewReceiptViewDelegate?
@@ -65,9 +66,18 @@ class NewReceiptView: UIView {
         return input
     }()
 
-    let checkbox: Checkbox = {
+    let checkboxold: Checkbox = {
         let checkbox = Checkbox()
         checkbox.setTitle(title: "Tomar agora")
+        return checkbox
+    }()
+
+    let checkbox: CFToggleCheckBox = {
+        let checkbox = CFToggleCheckBox(
+            title: "Tomar agora",
+            checked: .checked,
+            unchecked: .unchecked
+        )
         return checkbox
     }()
 
@@ -105,19 +115,11 @@ class NewReceiptView: UIView {
         return animationView
     }()
 
-//    let recurrenceOptions = [
-//        "De hora em hora",
-//        "2 em 2 horas",
-//        "4 em 4 horas",
-//        "6 em 6 horas",
-//        "12 em 12 horas",
-//        "Um por dia"
-//    ]
-
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupView()
         addTapGesture()
+        bindCheckboxAccessibility()
     }
 
     required init?(coder: NSCoder) {
@@ -204,6 +206,7 @@ class NewReceiptView: UIView {
     private func addTapGesture() {
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
         addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
+
     }
 
     @objc
@@ -224,6 +227,11 @@ class NewReceiptView: UIView {
 
         addButton.isEnabled = isRemedyFilled && isTimeFilled && isIntervalFilled
         addButton.backgroundColor = addButton.isEnabled ? CFColors.primaryRedBase : CFColors.gray500
+    }
+
+    @objc
+    private func didTap() {
+        delegate?.didTapAddButton()
     }
 
     private func setupObservers() {
@@ -294,4 +302,27 @@ extension NewReceiptView: UIPickerViewDataSource {
 
 extension NewReceiptView: UIPickerViewDelegate {
 
+}
+
+// MARK: Accessibility
+extension NewReceiptView {
+    private func bindCheckboxAccessibility() {
+        checkbox.isAccessibilityElement = true
+        checkbox.accessibilityLabel = "Checkbox para tomar o remédio na hora atual."
+        checkbox.accessibilityHint = "Toque neste component que é um quadrado, para alternar se você tomou o remédio agora, ou não."
+        checkbox.accessibilityTraits = [.button]
+
+        checkbox.addTarget(self, action: #selector(didTapCheckbox), for: .touchUpInside)
+    }
+
+    @objc
+    private func didTapCheckbox() {
+        if checkbox.isSelected {
+            checkbox.accessibilityTraits = [.button, .selected]
+            UIAccessibility.post(notification: .announcement, argument: "Checkbox marcado")
+        } else {
+            checkbox.accessibilityTraits = [.button]
+            UIAccessibility.post(notification: .announcement, argument: "Checkbox desmarcado")
+        }
+    }
 }

@@ -94,6 +94,46 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewDelegate {
     func didTapAvatar() {
 
+//        if
+//            let controller = broadcastController,
+//            controller.isBroadcasting {
+//            controller.finishBroadcast { error in
+//                if let error = error {
+//                    print("Failed to stop broadcast: \(error.localizedDescription)")
+//                } else {
+//                    print("Broadcast stopped successfully.")
+//                    self.broadcastController = nil
+//                }
+//            }
+//            return
+//        }
+//
+//        RPBroadcastActivityViewController.load(
+//            withPreferredExtension: "com.edy.Reminder.Broadcast-Extension"
+//        ) { broadcastAVC, _ in
+//            if let broadcastAVC = broadcastAVC {
+//
+//                broadcastAVC.delegate = self
+//
+//                // Present the controller so the user can start broadcasting
+//                if #available(iOS 15.0, *) {
+//                    UIApplication
+//                        .shared
+//                        .connectedScenes
+//                        .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+//                        .first?
+//                        .rootViewController?
+//                        .present(broadcastAVC, animated: true)
+//                } else {
+//                    UIApplication
+//                        .shared
+//                        .keyWindow?
+//                        .rootViewController?
+//                        .present(broadcastAVC, animated: true, completion: nil)
+//                }
+//            }
+//        }
+
         let alertController = UIAlertController(title: "Origem da foto", message: "Selecione a origem da foto", preferredStyle: .actionSheet)
 
         let libraryAction = UIAlertAction(title: "Galeria", style: .default, handler: { _ in
@@ -120,6 +160,25 @@ extension HomeViewController: HomeViewDelegate {
         delegate?.navigateToMyReceipts()
     }
 }
+
+// extension HomeViewController: RPBroadcastActivityViewControllerDelegate {
+//    func broadcastActivityViewController(
+//        _ broadcastActivityViewController: RPBroadcastActivityViewController,
+//        didFinishWith broadcastController: RPBroadcastController?,
+//        error: (any Error)?
+//    ) {
+//        broadcastActivityViewController.dismiss(animated: true) {
+//            self.broadcastController = broadcastController
+//            broadcastController?.startBroadcast { error in
+//                if let error = error {
+//                    print("Broadcast error: \(error)")
+//                } else {
+//                    print("Broadcast started")
+//                }
+//            }
+//        }
+//    }
+// }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private func selectProfileImage(from sourceType: UIImagePickerController.SourceType) {

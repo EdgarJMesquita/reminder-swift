@@ -10,7 +10,19 @@ import UserNotifications
 
 class NewReceiptViewModel {
     func addReceipt(remedy: String, time: String, recurrence: String, takeNow: Bool) {
-        let id = DBHelper.shared.insertReceipt(remedy: remedy, time: time, recurrence: recurrence, takeNow: takeNow)
+
+        var finalTime = time
+
+        if takeNow {
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            finalTime = formatter.string(from: date)
+
+        }
+
+        let id = DBHelper.shared.insertReceipt(remedy: remedy, time: finalTime, recurrence: recurrence, takeNow: takeNow)
+
         guard let id else { return }
 
         scheduleNotifications(remedy: remedy, time: time, recurrence: recurrence, id: id)

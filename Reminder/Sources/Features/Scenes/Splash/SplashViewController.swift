@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreFramework
+import LocalAuthentication
 
 class SplashViewController: UIViewController {
     let contentView: SplashView
@@ -42,12 +43,43 @@ class SplashViewController: UIViewController {
 
     private func decideFlow() {
        if let user = UserDefaultsManager.loadUser(), user.isUserSaved {
-           self.delegate?.navigateToHome()
+           if user.hasFaceIdEnabled {
+               authenticateWithFaceId()
+           } else {
+               self.delegate?.navigateToHome()
+           }
        } else {
-           self.animateLogoUp()
            self.delegate?.openLoginBottomSheet()
        }
-   }
+        self.animateLogoUp()
+    }
+
+}
+
+// MARK: FaceId Configuration
+extension SplashViewController {
+    private func authenticateWithFaceId() {
+        let context = LAContext()
+        var authError: NSError?
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+            let reason = "Autentica-se para acessar o app."
+            context.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: reason
+            ) { success, _ in
+                    DispatchQueue.main.async {
+                        if success {
+                            self.delegate?.navigateToHome()
+                        } else {
+                            self.delegate?.openLoginBottomSheet()
+                        }
+                    }
+                }
+        } else {
+            self.delegate?.openLoginBottomSheet()
+        }
+    }
 }
 
 // MARK: - Animations

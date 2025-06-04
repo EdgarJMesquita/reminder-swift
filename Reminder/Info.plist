@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Precisamos de sua permissão para notificar sobre seus remédios.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NunitoSans-ExtraBold.ttf</string>
@@ -31,5 +25,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

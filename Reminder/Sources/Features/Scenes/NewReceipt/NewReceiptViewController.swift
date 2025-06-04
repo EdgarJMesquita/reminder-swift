@@ -17,15 +17,7 @@ class NewReceiptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        let onboardingView = CFOnboardingView()
-        onboardingView.presentOnboarding(
-            on: self.view,
-            with: [
-                (nil, "Nome do medicamento"),
-                (nil, "Horário"),
-                (nil, "Recorrência")
-            ]
-        )
+        presentOnboarding()
     }
 
     init(contentView: NewReceiptView, viewModel: NewReceiptViewModel, delegate: NewReceiptFlowDelegate) {
@@ -58,6 +50,27 @@ class NewReceiptViewController: UIViewController {
         ])
     }
 
+    private func presentOnboarding() {
+        if UserDefaultsManager.hasSeenOnboarding() {
+            return
+        }
+
+        let onboardingView = CFOnboardingView()
+
+        let steps = [
+            (UIImage(named: "image1"), "Bem vindo ao Onboarding do Reminder."),
+            (UIImage(named: "image1"), "É fácil cadastrar seus remédios, tão simples quanot um click."),
+            (UIImage(named: "image1"), "Selecione o horário da primeira dose, e as subsequentes."),
+            (UIImage(named: "image1"), "Iremos te lembrar na hora de tomar o medicamento.")
+        ]
+
+        onboardingView.presentOnboarding(
+            on: self.view,
+            with: steps
+        )
+
+//        UserDefaultsManager.markOnboardingSeen()
+    }
 }
 
 extension NewReceiptViewController: NewReceiptViewDelegate {
